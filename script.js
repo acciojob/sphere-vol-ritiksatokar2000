@@ -1,7 +1,9 @@
 function volume_sphere() {
     //Write your code here
-	const radius= document.getElementById("radius").value;
-	if(radius<0 || radius == ""){
+	const input= document.getElementById("radius").value.trim();
+	const radius = Number(input);
+	
+	if(input ==="" || !Number.isFinite(radius) || radius <0){
 		document.getElementById("volume").value = "NAN"
 	}
 	let volume = (4/3)*Math.PI*radius*radius*radius;
